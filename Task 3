@@ -1,0 +1,27 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Произвольный массив
+        int[] array = { 1, 2, 3, 4, 5 };
+
+        // Вызов рекурсивной функции для вывода элементов массива, начиная с конца
+        PrintElementsInReverse(array, array.Length - 1);
+    }
+
+    static void PrintElementsInReverse(int[] array, int index)
+    {
+        if (index < 0) // Базовый случай рекурсии
+        {
+            return;
+        }
+
+        // Вывод текущего элемента
+        Console.WriteLine(array[index]);
+
+        // Рекурсивный вызов функции для следующего элемента
+        PrintElementsInReverse(array, index - 1);
+    }
+}
